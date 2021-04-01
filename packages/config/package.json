@@ -1,0 +1,31 @@
+{
+  "name": "@api-typed/config",
+  "version": "0.0.1",
+  "description": "Simple configuration container.",
+  "author": {
+    "name": "Michal Palys-Dudek",
+    "email": "michal@pnd.io"
+  },
+  "license": "MIT",
+  "keywords": [
+    "config",
+    "configuration",
+    "container"
+  ],
+  "homepage": "https://github.com/api-typed/framework/tree/main/packages/config#readme",
+  "bugs": "https://github.com/api-typed/framework/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/api-typed/framework.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "dist": "dist"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint ./src"
+  }
+}
