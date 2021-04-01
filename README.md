@@ -23,6 +23,12 @@ Api-Typed ties these powerful tools together and exposes a convenient pluggable 
 
 TBD.
 
+# Components
+
+Api-Typed is composed of several components that are published as self-contained npm packages.
+
+- [@api-typed/config](https://github.com/api-typed/framework/tree/main/packages/config#readme) - a simple configuration container.
+
 # Documentation
 
 TBD.
