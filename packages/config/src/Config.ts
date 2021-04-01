@@ -14,7 +14,7 @@ export class Config {
   /**
    * Holds all the configuration.
    */
-  private readonly params: Record<string, any> = {};
+  private readonly params: Record<string, unknown> = {};
 
   /**
    * All the loaded config files.
@@ -67,7 +67,7 @@ export class Config {
    *
    * @param obj Configuration object.
    */
-  public loadFromObject(obj: Record<string, any>): void {
+  public loadFromObject(obj: Record<string, unknown>): void {
     if (this.isFrozen) {
       throw new Error('Cannot load new configuration into a frozen config');
     }
@@ -82,11 +82,11 @@ export class Config {
    * @param defaultValue Default value if not found.
    */
   public get<T = any>(key: string, defaultValue?: T): T {
-    let param = get(this.params, key, defaultValue);
+    const param = get(this.params, key, defaultValue) as T;
 
     // resolve <references>
     if (typeof param === 'string') {
-      param = this.resolve(param);
+      return this.resolve(param) as any;
     }
 
     return param;
@@ -100,7 +100,7 @@ export class Config {
    * @param requiredKeys If the value is an object then check for these required
    *                     keys.
    */
-  public getRequired<T = any>(key: string, requiredKeys: string[] = []): T {
+  public getRequired<T = unknown>(key: string, requiredKeys: string[] = []): T {
     const param = this.get<T>(key);
 
     if (param === undefined || param === null) {
@@ -133,7 +133,7 @@ export class Config {
    */
   public resolve(value: string): string {
     return value.replace(/<([\w\d.]+)>/g, (match, refName) => {
-      const resolved = this.get(refName);
+      const resolved = this.get(refName) as string;
       if (!['string', 'number', 'undefined'].includes(typeof resolved)) {
         throw new Error(
           `Cannot reference non-scalar param "${refName}" while resolving "${value}"`,
