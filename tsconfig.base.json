@@ -3,9 +3,9 @@
   "display": "API Typed",
   "compilerOptions": {
     "lib": ["ES2020"],
-    "module": "ES2020",
+    "module": "CommonJS",
     "moduleResolution": "node",
-    "target": "ES2020",
+    "target": "ES2018",
     "declaration": true,
     "skipLibCheck": true,
     "removeComments": true,
