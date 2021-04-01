@@ -1,28 +1,27 @@
 import Container from 'typedi';
-import { Config } from '../Config';
+import Config from '../Config';
 
-export function ConfigParam<T = any>(key: string, defaultValue?: T) {
-  return function (object: unknown, propertyName: string, index?: number) {
+export function ConfigParam<T = unknown>(key: string): ParameterDecorator {
+  return function (object: any, propertyName: string, index?) {
     Container.registerHandler({
       object,
       propertyName,
       index,
-      value: (container) => container.get(Config).get<T>(key, defaultValue),
+      value: () => Config.get<T>(key),
     });
   };
 }
 
-export function RequireConfigParam<T = any>(
+export function RequireConfigParam<T = unknown>(
   key: string,
   requiredKeys: string[] = [],
-) {
-  return function (object: unknown, propertyName: string, index?: number) {
+): ParameterDecorator {
+  return function (object: any, propertyName: string, index?) {
     Container.registerHandler({
       object,
       propertyName,
       index,
-      value: (container) =>
-        container.get(Config).getRequired<T>(key, requiredKeys),
+      value: () => Config.getRequired<T>(key, requiredKeys),
     });
   };
 }
