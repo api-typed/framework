@@ -1,6 +1,6 @@
 {
   "name": "@api-typed/config",
-  "version": "0.0.1",
+  "version": "0.1.0-alpha.0",
   "description": "Simple configuration container.",
   "author": {
     "name": "Michal Palys-Dudek",
@@ -41,5 +41,6 @@
     "@types/lodash.get": "^4.4.6",
     "@types/lodash.merge": "^4.6.6",
     "typedi": "^0.10.0"
-  }
+  },
+  "gitHead": "7e5dedfe1babc963a57ebb018e385d62f1163634"
 }
