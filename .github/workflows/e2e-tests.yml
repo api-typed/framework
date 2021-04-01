@@ -33,6 +33,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
+      - run: npx lerna bootstrap --ignore-scripts
       - run: npm run test:e2e:coverage
       - name: Upload coverage
         uses: codecov/codecov-action@v1
