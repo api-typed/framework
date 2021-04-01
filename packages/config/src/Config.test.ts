@@ -1,7 +1,11 @@
-import { Config } from './Config';
+import Config, { Config as ConfigClass } from './Config';
 
 describe('Config', (): void => {
-  const config = new Config();
+  const config = new ConfigClass();
+
+  test('Default export is a global instance', () => {
+    expect(Config).toBe(ConfigClass.defaultInstance);
+  });
 
   describe('#loadFromObject', (): void => {
     test('loads object into config', (): void => {

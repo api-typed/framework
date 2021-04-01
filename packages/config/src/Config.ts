@@ -7,6 +7,11 @@ import merge from 'lodash.merge';
  */
 export class Config {
   /**
+   * Default global instance.
+   */
+  public static readonly defaultInstance = new Config();
+
+  /**
    * Holds all the configuration.
    */
   private readonly params: Record<string, any> = {};
@@ -138,3 +143,5 @@ export class Config {
     });
   }
 }
+
+export default Config.defaultInstance;
