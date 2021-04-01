@@ -1,5 +1,6 @@
-import * as glob from 'glob';
-import { get, merge } from 'lodash';
+import glob from 'glob';
+import get from 'lodash.get';
+import merge from 'lodash.merge';
 
 /**
  * Holds application configuration that can be loaded from files.
