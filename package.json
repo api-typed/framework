@@ -26,6 +26,8 @@
     "build": "lerna run build",
     "dev": "lerna run dev",
     "lint": "lerna run lint",
+    "prepare": "npm run lint && npm run test && npm run build",
+    "publish": "npm run prepare && lerna publish",
     "test:db": "docker-compose up",
     "test:coverage": "jest --runInBand --coverage",
     "test:e2e:coverage": "jest --runInBand --config jest.e2e.config.ts --coverage",
