@@ -29,6 +29,7 @@ Api-Typed is composed of several components that are published as self-contained
 
 - [@api-typed/common](https://github.com/api-typed/framework/tree/main/packages/common#readme) - shared utils that you probably don't need.
 - [@api-typed/config](https://github.com/api-typed/framework/tree/main/packages/config#readme) - a simple configuration container.
+- [@api-typed/logger](https://github.com/api-typed/framework/tree/main/packages/logger#readme) - logger and logging tools.
 
 # Documentation
 
