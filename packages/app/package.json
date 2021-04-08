@@ -1,0 +1,37 @@
+{
+  "name": "@api-typed/app",
+  "version": "0.1.0-alpha.2",
+  "description": "NodeJS application wiring using convenient configuration and modular design.",
+  "author": {
+    "name": "Michal Palys-Dudek",
+    "email": "michal@pnd.io"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/api-typed/framework/tree/main/packages/app#readme",
+  "bugs": "https://github.com/api-typed/framework/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/api-typed/framework.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "dist": "dist"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint ./src"
+  },
+  "dependencies": {
+    "@api-typed/config": "^0.1.0-alpha.1",
+    "@api-typed/logger": "^0.1.0-alpha.3",
+    "class-validator": "^0.13.1",
+    "dotenv": "^8.2.0",
+    "find-package-json": "^1.2.0",
+    "typedi": "^0.8.0"
+  },
+  "devDependencies": {
+    "@types/find-package-json": "^1.2.0"
+  }
+}
