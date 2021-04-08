@@ -1,6 +1,6 @@
 {
   "name": "@api-typed/http-module",
-  "version": "0.1.0-alpha.4",
+  "version": "0.1.0-alpha.5",
   "description": "HTTP server module for Api-Typed",
   "author": {
     "name": "Michal Palys-Dudek",
