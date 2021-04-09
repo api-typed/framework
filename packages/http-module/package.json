@@ -1,6 +1,6 @@
 {
   "name": "@api-typed/http-module",
-  "version": "0.1.0-alpha.7",
+  "version": "0.1.0-alpha.8",
   "description": "HTTP server module for Api-Typed",
   "author": {
     "name": "Michal Palys-Dudek",
@@ -24,10 +24,10 @@
     "lint": "eslint ./src"
   },
   "dependencies": {
-    "@api-typed/app": "0.1.0-alpha.7",
-    "@api-typed/common": "0.1.0-alpha.7",
-    "@api-typed/config": "0.1.0-alpha.7",
-    "@api-typed/logger": "0.1.0-alpha.7",
+    "@api-typed/app": "^0.1.0-alpha.8",
+    "@api-typed/common": "^0.1.0-alpha.8",
+    "@api-typed/config": "^0.1.0-alpha.8",
+    "@api-typed/logger": "^0.1.0-alpha.8",
     "express": "4.17.1",
     "serve-favicon": "2.5.0"
   },
