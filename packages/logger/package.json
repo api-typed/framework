@@ -24,14 +24,14 @@
     "lint": "eslint ./src"
   },
   "dependencies": {
-    "triple-beam": "^1.3.0",
-    "winston": "^3.3.3"
+    "triple-beam": "1.3.0",
+    "winston": "3.3.3"
   },
   "peerDependencies": {
-    "typedi": "^0.8.0"
+    "typedi": "^0.8.0 || ^0.9.0 || ^0.10.0"
   },
   "devDependencies": {
     "@types/winston": "^2.4.4",
-    "typedi": "*"
+    "typedi": "0.10.0"
   }
 }
