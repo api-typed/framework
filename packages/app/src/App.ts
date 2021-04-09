@@ -8,7 +8,7 @@ import {
 import { useContainer as useContainerForClassValidator } from 'class-validator';
 import findPackageJson from 'find-package-json';
 import * as path from 'path';
-import Container, { ObjectType, Token } from 'typedi';
+import Container from 'typedi';
 import { loadEnvFiles } from './lib/loadEnvFiles';
 import { ModuleInterface } from './Module/ModuleInterface';
 
@@ -267,19 +267,5 @@ export class App {
     return providers.reduce((items, mod: I) => {
       return [...items, ...mod[loaderMethod](this.config)];
     }, []);
-  }
-
-  /**
-   * Get a service from the DI container.
-   */
-  public get<T = unknown>(identifier: ObjectType<T> | Token<T> | string): T {
-    // these are essentially the same things, but typescript complains...
-    if (typeof identifier === 'string') {
-      return this.container.get(identifier);
-    }
-    if (identifier instanceof Token) {
-      return this.container.get(identifier);
-    }
-    return this.container.get(identifier);
   }
 }
