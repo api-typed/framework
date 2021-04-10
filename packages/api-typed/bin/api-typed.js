@@ -18,7 +18,7 @@ function main(command, runMode) {
   if (isRunDev) {
     return require('nodemon')({
       script: path.resolve(__dirname, '../src/runApp'),
-      exec: 'ts-node',
+      exec: 'ts-node -r tsconfig-paths/register',
       env: {
         API_TYPED_APP_FILE: appFile,
         API_TYPED_RUN_MODE: runMode.replace(/-dev$/, ''),
@@ -40,6 +40,7 @@ function main(command, runMode) {
   }
 
   require('ts-node/register');
+  require('tsconfig-paths/register');
   runApp(appFile, 'command');
 }
 
