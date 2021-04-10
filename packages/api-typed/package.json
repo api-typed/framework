@@ -1,0 +1,33 @@
+{
+  "name": "api-typed",
+  "version": "0.1.0-alpha.8",
+  "description": "Api-Typed command line interface entry point.",
+  "author": {
+    "name": "Michal Palys-Dudek",
+    "email": "michal@pnd.io"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/api-typed/framework/tree/main/packages/api-typed-cli#readme",
+  "bugs": "https://github.com/api-typed/framework/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/api-typed/framework.git"
+  },
+  "directories": {
+    "dist": "dist"
+  },
+  "bin": {
+    "api-typed": "bin/api-typed.js"
+  },
+  "scripts": {
+    "build": "echo 'No build needed.'",
+    "dev": "echo 'No dev needed.'",
+    "lint": "eslint ./bin"
+  },
+  "dependencies": {
+    "@api-typed/app": "^0.1.0-alpha.8",
+    "glob": "^7.1.6",
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1"
+  }
+}
