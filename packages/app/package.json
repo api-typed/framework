@@ -1,6 +1,6 @@
 {
   "name": "@api-typed/app",
-  "version": "0.1.0-alpha.8",
+  "version": "0.1.0-alpha.9",
   "description": "NodeJS application wiring using convenient configuration and modular design.",
   "author": {
     "name": "Michal Palys-Dudek",
@@ -24,8 +24,8 @@
     "lint": "eslint ./src"
   },
   "dependencies": {
-    "@api-typed/config": "^0.1.0-alpha.8",
-    "@api-typed/logger": "^0.1.0-alpha.8",
+    "@api-typed/config": "^0.1.0-alpha.9",
+    "@api-typed/logger": "^0.1.0-alpha.9",
     "dotenv": "8.2.0",
     "find-package-json": "1.2.0"
   },

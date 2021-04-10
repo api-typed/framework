@@ -1,6 +1,6 @@
 {
   "name": "api-typed",
-  "version": "0.1.0-alpha.8",
+  "version": "0.1.0-alpha.9",
   "description": "Api-Typed command line interface entry point.",
   "author": {
     "name": "Michal Palys-Dudek",
@@ -25,7 +25,7 @@
     "lint": "eslint ./bin"
   },
   "dependencies": {
-    "@api-typed/app": "^0.1.0-alpha.8",
+    "@api-typed/app": "^0.1.0-alpha.9",
     "glob": "^7.1.6",
     "nodemon": "^2.0.7",
     "ts-node": "^9.1.1"
