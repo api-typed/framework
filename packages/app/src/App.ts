@@ -89,7 +89,7 @@ export class App {
     this.logger = this.initLogger();
     this.container.set(Logger, this.logger);
 
-    useContainerForClassValidator(Container);
+    useContainerForClassValidator(this.container);
 
     const appName = this.config.get('appName');
     const version = this.config.get('version');
