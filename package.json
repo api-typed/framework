@@ -22,12 +22,16 @@
     "typedi",
     "framework"
   ],
+  "bin": {
+    "api-typed": "packages/api-typed/bin/api-typed.js"
+  },
   "scripts": {
     "build": "lerna run build",
     "dev": "lerna run dev",
     "lint": "lerna run lint",
     "prerelease": "npm run lint && npm run test && npm run build",
     "release": "lerna publish",
+    "test:app": "api-typed run http-dev",
     "test:db": "docker-compose up",
     "test:coverage": "jest --runInBand --coverage",
     "test:e2e:coverage": "jest --runInBand --config jest.e2e.config.ts --coverage",
