@@ -31,7 +31,6 @@
     "typedi": "^0.8.0 || ^0.9.0 || ^0.10.0"
   },
   "devDependencies": {
-    "@types/winston": "^2.4.4",
-    "typedi": "0.10.0"
+    "@types/winston": "^2.4.4"
   }
 }

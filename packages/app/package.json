@@ -34,8 +34,6 @@
     "typedi": "^0.8.0 || ^0.9.0 || ^0.10.0"
   },
   "devDependencies": {
-    "@types/find-package-json": "1.2.0",
-    "class-validator": "0.13.1",
-    "typedi": "0.10.0"
+    "@types/find-package-json": "1.2.0"
   }
 }
