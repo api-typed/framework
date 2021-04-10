@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { App } = require('@api-typed/app');
 
 /**
  * Require the given app file and make sure it returns Api-Typed App instance.
@@ -10,7 +9,7 @@ const { App } = require('@api-typed/app');
 function requireApp(appFile) {
   const app = require(appFile).default;
 
-  if (!(app instanceof App)) {
+  if (!app.start || typeof app.start !== 'function') {
     throw new Error(
       `App file "${appFile} did not export instance of Api-Typed App as a default.`,
     );
