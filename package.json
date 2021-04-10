@@ -27,7 +27,7 @@
   },
   "scripts": {
     "build": "lerna run build",
-    "dev": "lerna run dev",
+    "dev": "tsc --watch",
     "lint": "lerna run lint",
     "prerelease": "npm run lint && npm run test && npm run build",
     "release": "lerna publish",
