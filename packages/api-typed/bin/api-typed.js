@@ -17,7 +17,7 @@ function main(command, runMode) {
 
   if (isRunDev) {
     return require('nodemon')({
-      script: path.resolve(__dirname, '../src/run'),
+      script: path.resolve(__dirname, '../src/runApp'),
       exec: 'ts-node',
       env: {
         API_TYPED_APP_FILE: appFile,
