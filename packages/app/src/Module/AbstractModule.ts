@@ -8,7 +8,7 @@ import { ModuleInterface } from './ModuleInterface';
  * so you don't have to.
  */
 export abstract class AbstractModule implements ModuleInterface {
-  abstract name;
+  public abstract readonly name: string;
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public loadConfig(config: Config): void {}
