@@ -5,7 +5,7 @@
 ![Lint](https://github.com/api-typed/framework/actions/workflows/lint.yml/badge.svg?branch=main)
 [![codecov](https://codecov.io/gh/api-typed/framework/branch/main/graph/badge.svg?token=XF35AW6T60)](https://codecov.io/gh/api-typed/framework)
 
-🔥 **Early Alpha / PoC** - try at your own risk
+🔥 **Early Alpha / PoC** - do not try at home!
 
 Opinionated TypeScript framework built on the shoulders of giants.
 
