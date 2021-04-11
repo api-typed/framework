@@ -15,6 +15,13 @@ function main(command, runMode) {
   const appFile = locateAppFile(isRunDev || !isRun ? 'ts' : 'js');
   const appRootDir = path.dirname(appFile);
 
+  const devDirs = [appRootDir];
+  if (process.env.API_TYPED_DEV_DIRS) {
+    process.env.API_TYPED_DEV_DIRS.split(',').map((dir) =>
+      devDirs.push(path.resolve(process.cwd(), dir)),
+    );
+  }
+
   if (isRunDev) {
     return require('nodemon')({
       script: path.resolve(__dirname, '../src/runApp'),
@@ -23,9 +30,9 @@ function main(command, runMode) {
         API_TYPED_APP_FILE: appFile,
         API_TYPED_RUN_MODE: runMode.replace(/-dev$/, ''),
       },
-      watch: [`${appRootDir}/**`],
+      watch: devDirs.map((dir) => `${dir}/**`),
       ext: 'ts,json',
-      ignore: [`${appRootDir}/**/*.@(test|spec).ts`],
+      ignore: devDirs.map((dir) => `${dir}/**/*.@(test|spec).ts`),
     })
       .on('log', ({ colour }) => console.log(colour))
       .on('start', () => {
