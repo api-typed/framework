@@ -2,8 +2,10 @@ import { ConfigParam } from '@api-typed/config';
 import { InjectLogger, LoggerInterface, LogLevel } from '@api-typed/logger';
 import { NextFunction, Request, Response } from 'express';
 import { ExpressMiddlewareInterface, Middleware } from 'routing-controllers';
+import { Service } from 'typedi';
 
 @Middleware({ type: 'before' })
+@Service()
 export class RequestLogger implements ExpressMiddlewareInterface {
   constructor(
     @InjectLogger() private readonly logger: LoggerInterface,

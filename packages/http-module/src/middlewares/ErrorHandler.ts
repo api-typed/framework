@@ -5,6 +5,7 @@ import {
   HttpError,
   Middleware,
 } from 'routing-controllers';
+import { Service } from 'typedi';
 
 const HttpErrorNames = {
   400: 'Bad Request',
@@ -51,6 +52,7 @@ const HttpErrorNames = {
 };
 
 @Middleware({ type: 'after' })
+@Service()
 export class ErrorHandler implements ExpressErrorMiddlewareInterface {
   constructor(@InjectLogger() private readonly logger: LoggerInterface) {}
 

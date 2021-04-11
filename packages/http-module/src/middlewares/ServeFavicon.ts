@@ -2,8 +2,10 @@ import { RequireConfigParam } from '@api-typed/config';
 import express from 'express';
 import { ExpressMiddlewareInterface, Middleware } from 'routing-controllers';
 import favicon from 'serve-favicon';
+import { Service } from 'typedi';
 
 @Middleware({ type: 'before', priority: 10 })
+@Service()
 export class ServeFavicon implements ExpressMiddlewareInterface {
   private readonly favicon;
 
