@@ -28,7 +28,7 @@
     "serve-favicon": "2.5.0"
   },
   "peerDependencies": {
-    "@api-typed/app": "^0.1.0-alpha.9",
+    "@api-typed/app": "^0.1.0-alpha.11",
     "@api-typed/common": "^0.1.0-alpha.9",
     "@api-typed/config": "^0.1.0-alpha.9",
     "@api-typed/logger": "^0.1.0-alpha.9",
