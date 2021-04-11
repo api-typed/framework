@@ -1,4 +1,4 @@
-import { RequireConfigParam } from '@api-typed/config';
+import { ConfigParam } from '@api-typed/config';
 import express from 'express';
 import { ExpressMiddlewareInterface, Middleware } from 'routing-controllers';
 import favicon from 'serve-favicon';
@@ -9,9 +9,7 @@ import { Service } from 'typedi';
 export class ServeFavicon implements ExpressMiddlewareInterface {
   private readonly favicon;
 
-  constructor(
-    @RequireConfigParam('http.favicon') private readonly path: string,
-  ) {
+  constructor(@ConfigParam('http.favicon') private readonly path: string) {
     this.favicon = favicon(this.path);
   }
 

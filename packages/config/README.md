@@ -140,11 +140,11 @@ export class DatabaseService {
     private readonly username: string,
     @ConfigParam<string>('database.password')
     private readonly password: string,
+    @ConfigParam<number>('database.port', { optional: true })
+    private readonly host: number = 5432,
   ) {}
 }
 ```
-
-You can also use `@RequireConfigParam()` decorator to ensure these parameters are set and throw an error if not.
 
 ## Create other instances of `Config`
 
