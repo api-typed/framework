@@ -40,7 +40,6 @@
     "test": "jest --runInBand"
   },
   "devDependencies": {
-    "@api-typed/app": "*",
     "@types/express": "4.17.11",
     "@types/find-package-json": "1.2.0",
     "@types/glob": "7.1.3",
