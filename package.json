@@ -30,7 +30,7 @@
     "build": "lerna exec npm i && lerna run build",
     "dev": "tsc --watch",
     "lint": "lerna run lint",
-    "prerelease": "npm run lint && npm run test && npm run build",
+    "prerelease": "npm run build && npm run lint && npm run test",
     "release": "lerna publish",
     "test:app": "API_TYPED_DEV_DIRS=packages api-typed run http-dev",
     "test:db": "docker-compose up",
