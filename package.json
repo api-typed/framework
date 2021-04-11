@@ -39,14 +39,6 @@
     "test:e2e": "jest --runInBand --config jest.e2e.config.ts",
     "test": "jest --runInBand"
   },
-  "dependencies": {
-    "@api-typed/app": "file:packages/app",
-    "@api-typed/common": "file:packages/common",
-    "@api-typed/config": "file:packages/config",
-    "@api-typed/http-module": "file:packages/http-module",
-    "@api-typed/logger": "file:packages/logger",
-    "api-typed": "file:packages/api-typed"
-  },
   "devDependencies": {
     "@api-typed/app": "*",
     "@types/express": "4.17.11",
