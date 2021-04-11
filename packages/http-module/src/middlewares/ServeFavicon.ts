@@ -5,12 +5,9 @@ import favicon from 'serve-favicon';
 
 @Middleware({ type: 'before', priority: 10 })
 export class ServeFavicon implements ExpressMiddlewareInterface {
-  private readonly path;
-
   private readonly favicon;
 
-  constructor(@ConfigParam('http.favicon') path: string) {
-    this.path = path;
+  constructor(@ConfigParam('http.favicon') private readonly path: string) {
     this.favicon = favicon(this.path);
   }
 

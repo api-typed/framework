@@ -22,7 +22,7 @@ export class HttpModule
   private server: Server;
 
   public loadConfig(config: Config) {
-    config.loadFromFile(__dirname + '/config');
+    config.loadFromDir(__dirname + '/config');
   }
 
   public loadMiddlewares() {
