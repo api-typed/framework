@@ -43,6 +43,10 @@ export class Config {
    */
   public loadFromDir(configDir: string): void {
     glob.sync(`${configDir}/**/*{.js,.ts,.json}`).map((filePath) => {
+      if (filePath.endsWith('.d.ts')) {
+        return;
+      }
+
       this.loadFromFile(filePath);
     });
   }
