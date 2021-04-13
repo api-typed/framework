@@ -167,4 +167,4 @@ myConfig.get('port'); // 3000
 myOtherConfig.get('port'); // 4000
 ```
 
-NOTE: `@ConfigParam()` and `@RequireConfigParam()` don't have access to custom instances of the config, so you won't be able to use them.
+NOTE: `@ConfigParam()` doesn't have access to custom instances of the config, so you won't be able to use it.
