@@ -1,4 +1,21 @@
-import { App } from '@api-typed/app';
+import { AbstractModule, App } from '@api-typed/app';
+import {
+  CommandLineModule,
+  HasCommands,
+  loadCommands,
+} from '@api-typed/command-line';
 import { HttpModule } from '@api-typed/http-module';
 
-export default new App(__dirname, [new HttpModule()]);
+class AppModule extends AbstractModule implements HasCommands {
+  public readonly name = 'app';
+
+  public loadCommands(): Function[] {
+    return loadCommands(`${__dirname}/commands/*.ts`);
+  }
+}
+
+export default new App(__dirname, [
+  new HttpModule(),
+  new CommandLineModule(),
+  new AppModule(),
+]);

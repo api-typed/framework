@@ -1,0 +1,58 @@
+{
+  "name": "@api-typed/command-line",
+  "version": "0.1.0-alpha.13",
+  "description": "Command line interface tools.",
+  "author": {
+    "name": "Michal Palys-Dudek",
+    "email": "michal@pnd.io"
+  },
+  "license": "MIT",
+  "keywords": [
+    "cli",
+    "command",
+    "commander"
+  ],
+  "homepage": "https://github.com/api-typed/framework/tree/main/packages/command-line#readme",
+  "bugs": "https://github.com/api-typed/framework/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/api-typed/framework.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "dist": "dist"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint ./src"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^7.2.0",
+    "lodash.padend": "^4.6.1",
+    "lodash.upperfirst": "^4.3.1"
+  },
+  "peerDependencies": {
+    "@api-typed/app": "^0.1.0-alpha.11",
+    "@api-typed/common": "^0.1.0-alpha.9",
+    "@api-typed/config": "^0.1.0-alpha.9",
+    "@api-typed/logger": "^0.1.0-alpha.9"
+  },
+  "peerDependenciesMeta": {
+    "@api-typed/app": {
+      "optional": true
+    },
+    "@api-typed/config": {
+      "optional": true
+    },
+    "@api-typed/logger": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/lodash.padend": "^4.6.6",
+    "@types/lodash.upperfirst": "^4.3.6"
+  }
+}
