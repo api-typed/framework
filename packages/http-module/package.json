@@ -28,10 +28,11 @@
     "serve-favicon": "2.5.0"
   },
   "peerDependencies": {
-    "@api-typed/app": "^0.1.0-alpha.14",
-    "@api-typed/common": "^0.1.0-alpha.14",
-    "@api-typed/config": "^0.1.0-alpha.14",
-    "@api-typed/logger": "^0.1.0-alpha.14",
+    "@api-typed/app": "^0.1.0-alpha.16",
+    "@api-typed/common": "^0.1.0-alpha.15",
+    "@api-typed/config": "^0.1.0-alpha.15",
+    "@api-typed/logger": "^0.1.0-alpha.15",
+    "class-validator": "^0.12.0 || ^0.13.0",
     "routing-controllers": "^0.9.0",
     "typedi": "^0.8.0 || ^0.9.0 || ^0.10.0"
   }

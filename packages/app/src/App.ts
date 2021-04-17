@@ -5,7 +5,6 @@ import {
   LoggerInterface,
   LogLevel,
 } from '@api-typed/logger';
-import { useContainer as useContainerForClassValidator } from 'class-validator';
 import findPackageJson from 'find-package-json';
 import * as path from 'path';
 import Container from 'typedi';
@@ -88,8 +87,6 @@ export class App {
 
     this.logger = this.initLogger();
     this.container.set(Logger, this.logger);
-
-    useContainerForClassValidator(this.container);
 
     const appName = this.config.get('appName');
     const version = this.config.get('version');

@@ -1,5 +1,6 @@
 import { AbstractModule, App, AppDelegate } from '@api-typed/app';
 import { Config } from '@api-typed/config';
+import { useContainer as useContainerForClassValidator } from 'class-validator';
 import * as Express from 'express';
 import { Server } from 'net';
 import { createExpressServer, useContainer } from 'routing-controllers';
@@ -33,6 +34,7 @@ export class HttpModule
     this.app = app;
 
     useContainer(app.container);
+    useContainerForClassValidator(app.container);
 
     if (app.getRunMode() === 'http') {
       return this;

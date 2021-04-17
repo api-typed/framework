@@ -28,10 +28,12 @@
   "scripts": {
     "bootstrap": "lerna exec rimraf node_modules && lerna bootstrap --hoist",
     "build": "lerna exec npm i && lerna run build",
+    "clear": "lerna exec rimraf node_modules",
     "dev": "tsc --watch",
     "lint": "lerna run lint",
     "prerelease": "npm run build && npm run lint && npm run test",
     "release": "lerna publish",
+    "reset": "npm run clear && npm run bootstrap",
     "test:app": "API_TYPED_DEV_DIRS=packages api-typed run http-dev",
     "test:db": "docker-compose up",
     "test:coverage": "jest --runInBand --coverage",
