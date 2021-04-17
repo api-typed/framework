@@ -30,7 +30,7 @@
     "@api-typed/config": "^0.1.0-alpha.15",
     "@api-typed/logger": "^0.1.0-alpha.15",
     "chalk": "^4.1.0",
-    "glob": "^7.1.6",
+    "glob": "7.1.6",
     "pg": "^8.6.0"
   },
   "peerDependencies": {
