@@ -29,6 +29,7 @@
     "lint": "eslint ./src"
   },
   "dependencies": {
+    "@api-typed/common": "^0.1.0-alpha.9",
     "chalk": "^4.1.0",
     "commander": "^7.2.0",
     "lodash.padend": "^4.6.1",
@@ -36,7 +37,6 @@
   },
   "peerDependencies": {
     "@api-typed/app": "^0.1.0-alpha.11",
-    "@api-typed/common": "^0.1.0-alpha.9",
     "@api-typed/config": "^0.1.0-alpha.9",
     "@api-typed/logger": "^0.1.0-alpha.9"
   },
