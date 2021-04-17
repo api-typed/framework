@@ -12,7 +12,7 @@ export default isE2ETest
       testPathIgnorePatterns: ['/node_modules/'],
       testRegex: '.*\\.test\\.ts$',
       transform: {
-        '^.+\\.(ts|js)$': 'ts-jest',
+        '^.+\\.ts$': 'ts-jest',
       },
       collectCoverageFrom: ['<rootDir>/packages/**/*.ts'],
       coverageDirectory: '<rootDir>/coverage',

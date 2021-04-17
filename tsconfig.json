@@ -7,5 +7,13 @@
       "@api-typed/*": ["dev/*"]
     }
   },
-  "include": ["example/**/*", "dev/*", "packages/**/*", "tests/**/*"]
+  "include": [
+    "example/**/*",
+    "dev/*",
+    "packages/**/*",
+    "tests/**/*",
+    "jest.config.ts",
+    "jest.e2e.config.ts",
+    "jest.setup.ts"
+  ]
 }

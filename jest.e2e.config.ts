@@ -3,7 +3,7 @@ export default {
   rootDir: __dirname,
   testRegex: '.*\\.spec\\.ts$',
   transform: {
-    '^.+\\.(ts|js)$': 'ts-jest',
+    '^.+\\.ts$': 'ts-jest',
   },
   testEnvironment: 'node',
   collectCoverageFrom: ['<rootDir>/packages/**/*.ts'],
