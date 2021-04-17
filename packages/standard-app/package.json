@@ -1,6 +1,6 @@
 {
   "name": "@api-typed/standard-app",
-  "version": "0.1.0-alpha.15",
+  "version": "0.1.0-alpha.17",
   "description": "Standard app setup for Api-Typed projects.",
   "author": {
     "name": "Michal Palys-Dudek",

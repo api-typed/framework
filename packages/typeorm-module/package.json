@@ -1,6 +1,6 @@
 {
   "name": "@api-typed/typeorm-module",
-  "version": "0.1.0-alpha.15",
+  "version": "0.1.0-alpha.17",
   "description": "TypeORM module for Api-Typed",
   "author": {
     "name": "Michal Palys-Dudek",
