@@ -2,14 +2,10 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "outDir": "dist/",
-    "paths": {
-      "@api-typed/*": ["dev/*"]
-    }
+    "outDir": "dist/"
   },
   "include": [
     "example/**/*",
-    "dev/*",
     "packages/**/*",
     "tests/**/*",
     "jest.config.ts",
