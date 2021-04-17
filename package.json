@@ -1,6 +1,7 @@
 {
   "name": "@api-typed/framework",
   "version": "0.0.1",
+  "private": true,
   "description": "Opinionated TypeScript framework built on the shoulders of giants.",
   "author": {
     "name": "Michal Palys-Dudek",
@@ -40,6 +41,18 @@
     "test:e2e:coverage": "jest --runInBand --config jest.e2e.config.ts --coverage",
     "test:e2e": "jest --runInBand --config jest.e2e.config.ts",
     "test": "jest --runInBand"
+  },
+  "dependencies": {
+    "@api-typed/app": "file:packages/app",
+    "@api-typed/command-line": "file:packages/command-line",
+    "@api-typed/common": "file:packages/common",
+    "@api-typed/config": "file:packages/config",
+    "@api-typed/http-module": "file:packages/http-module",
+    "@api-typed/logger": "file:packages/logger",
+    "@api-typed/standard-app": "file:packages/standard-app",
+    "@api-typed/testing": "file:packages/testing",
+    "@api-typed/typeorm-module": "file:packages/typeorm-module",
+    "api-typed": "file:packages/api-typed"
   },
   "devDependencies": {
     "@types/express": "4.17.11",
