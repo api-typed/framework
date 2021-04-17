@@ -1,7 +1,6 @@
 export default {
   appName: 'Api-Typed Example App',
   log_level: process.env.LOG_LEVEL || 'debug',
-  cacheDir: '<projectDir>/.cache',
   typeorm: {
     connection: {
       // match what's in docker-compose.yml

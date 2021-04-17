@@ -1,6 +1,6 @@
 {
   "name": "@api-typed/command-line",
-  "version": "0.1.0-alpha.15",
+  "version": "0.1.0-alpha.16",
   "description": "Command line interface tools.",
   "author": {
     "name": "Michal Palys-Dudek",
@@ -36,9 +36,9 @@
     "lodash.upperfirst": "^4.3.1"
   },
   "peerDependencies": {
-    "@api-typed/app": "^0.1.0-alpha.11",
-    "@api-typed/config": "^0.1.0-alpha.9",
-    "@api-typed/logger": "^0.1.0-alpha.9"
+    "@api-typed/app": "^0.1.0-alpha.16",
+    "@api-typed/config": "^0.1.0-alpha.15",
+    "@api-typed/logger": "^0.1.0-alpha.15"
   },
   "peerDependenciesMeta": {
     "@api-typed/app": {
