@@ -26,8 +26,8 @@
     "api-typed": "packages/api-typed/bin/api-typed.js"
   },
   "scripts": {
-    "bootstrap": "lerna exec rimraf node_modules && lerna bootstrap --hoist",
-    "build": "lerna exec npm i && lerna run build",
+    "bootstrap": "lerna exec rimraf node_modules && lerna bootstrap --hoist && lerna link --force-local",
+    "build": "lerna run build",
     "clear": "lerna exec rimraf node_modules",
     "dev": "tsc --watch",
     "lint": "lerna run lint",
