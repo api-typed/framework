@@ -1,6 +1,6 @@
 {
   "name": "@api-typed/standard-app",
-  "version": "0.1.0-alpha.17",
+  "version": "0.1.0-alpha.18",
   "description": "Standard app setup for Api-Typed projects.",
   "author": {
     "name": "Michal Palys-Dudek",
@@ -24,10 +24,10 @@
     "lint": "eslint ./src"
   },
   "dependencies": {
-    "@api-typed/app": "^0.1.0-alpha.17",
-    "@api-typed/command-line": "^0.1.0-alpha.17",
-    "@api-typed/config": "^0.1.0-alpha.17",
-    "@api-typed/http-module": "^0.1.0-alpha.17",
-    "@api-typed/typeorm-module": "^0.1.0-alpha.17"
+    "@api-typed/app": "^0.1.0-alpha.18",
+    "@api-typed/command-line": "^0.1.0-alpha.18",
+    "@api-typed/config": "^0.1.0-alpha.18",
+    "@api-typed/http-module": "^0.1.0-alpha.18",
+    "@api-typed/typeorm-module": "^0.1.0-alpha.18"
   }
 }

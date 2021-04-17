@@ -1,6 +1,6 @@
 {
   "name": "api-typed",
-  "version": "0.1.0-alpha.17",
+  "version": "0.1.0-alpha.18",
   "description": "Api-Typed command line interface entry point.",
   "author": {
     "name": "Michal Palys-Dudek",

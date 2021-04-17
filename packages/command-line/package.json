@@ -1,6 +1,6 @@
 {
   "name": "@api-typed/command-line",
-  "version": "0.1.0-alpha.17",
+  "version": "0.1.0-alpha.18",
   "description": "Command line interface tools.",
   "author": {
     "name": "Michal Palys-Dudek",
@@ -29,10 +29,10 @@
     "lint": "eslint ./src"
   },
   "dependencies": {
-    "@api-typed/app": "^0.1.0-alpha.16",
-    "@api-typed/common": "^0.1.0-alpha.17",
-    "@api-typed/config": "^0.1.0-alpha.15",
-    "@api-typed/logger": "^0.1.0-alpha.15",
+    "@api-typed/app": "^0.1.0-alpha.18",
+    "@api-typed/common": "^0.1.0-alpha.18",
+    "@api-typed/config": "^0.1.0-alpha.18",
+    "@api-typed/logger": "^0.1.0-alpha.18",
     "chalk": "^4.1.0",
     "commander": "^7.2.0",
     "lodash.padend": "^4.6.1",
