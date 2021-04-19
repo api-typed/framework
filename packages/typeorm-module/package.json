@@ -1,6 +1,6 @@
 {
   "name": "@api-typed/typeorm-module",
-  "version": "0.1.0-alpha.18",
+  "version": "0.1.0-beta.0",
   "description": "TypeORM module for Api-Typed",
   "author": {
     "name": "Michal Palys-Dudek",
@@ -24,8 +24,8 @@
     "lint": "eslint ./src"
   },
   "dependencies": {
-    "@api-typed/app": "^0.1.0-alpha.18",
-    "@api-typed/command-line": "^0.1.0-alpha.18",
+    "@api-typed/app": "^0.1.0-beta.0",
+    "@api-typed/command-line": "^0.1.0-beta.0",
     "@api-typed/common": "^0.1.0-alpha.18",
     "@api-typed/config": "^0.1.0-alpha.18",
     "@api-typed/logger": "^0.1.0-alpha.18",

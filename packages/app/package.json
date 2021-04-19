@@ -1,6 +1,6 @@
 {
   "name": "@api-typed/app",
-  "version": "0.1.0-alpha.18",
+  "version": "0.1.0-beta.0",
   "description": "NodeJS application wiring using convenient configuration and modular design.",
   "author": {
     "name": "Michal Palys-Dudek",

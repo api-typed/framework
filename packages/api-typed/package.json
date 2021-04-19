@@ -1,6 +1,6 @@
 {
   "name": "api-typed",
-  "version": "0.1.0-alpha.18",
+  "version": "0.1.0-beta.0",
   "description": "Api-Typed command line interface entry point.",
   "author": {
     "name": "Michal Palys-Dudek",
@@ -27,15 +27,15 @@
     "lint": "eslint ./bin ./src"
   },
   "dependencies": {
-    "@api-typed/app": "0.1.0-alpha.18",
-    "@api-typed/command-line": "0.1.0-alpha.18",
+    "@api-typed/app": "^0.1.0-beta.0",
+    "@api-typed/command-line": "^0.1.0-beta.0",
     "@api-typed/common": "0.1.0-alpha.18",
     "@api-typed/config": "0.1.0-alpha.18",
-    "@api-typed/http-module": "0.1.0-alpha.18",
+    "@api-typed/http-module": "^0.1.0-beta.0",
     "@api-typed/logger": "0.1.0-alpha.18",
-    "@api-typed/standard-app": "0.1.0-alpha.18",
-    "@api-typed/testing": "0.1.0-alpha.18",
-    "@api-typed/typeorm-module": "0.1.0-alpha.18",
+    "@api-typed/standard-app": "^0.1.0-beta.0",
+    "@api-typed/testing": "^0.1.0-beta.0",
+    "@api-typed/typeorm-module": "^0.1.0-beta.0",
     "glob": "7.1.6",
     "nodemon": "^2.0.7",
     "reflect-metadata": "^0.1.13",
