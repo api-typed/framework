@@ -29,7 +29,7 @@
   "scripts": {
     "bootstrap": "lerna exec rimraf node_modules && lerna bootstrap --hoist && lerna link --force-local",
     "build": "lerna run build",
-    "clear": "lerna exec rimraf node_modules",
+    "clear": "lerna exec rimraf node_modules && lerna exec rimraf dist",
     "dev": "lerna run --stream --parallel dev",
     "lint": "lerna run lint",
     "prerelease": "npm run build && npm run lint && npm run test && npm run test:e2e",
