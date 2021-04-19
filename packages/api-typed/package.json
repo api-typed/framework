@@ -13,22 +13,39 @@
     "type": "git",
     "url": "https://github.com/api-typed/framework.git"
   },
-  "directories": {
-    "dist": "dist"
-  },
   "bin": {
     "api-typed": "bin/api-typed.js"
   },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "dist": "dist"
+  },
   "scripts": {
-    "build": "echo 'No build needed.'",
-    "dev": "echo 'No dev needed.'",
-    "lint": "eslint ./bin"
+    "build": "rimraf dist && tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint ./bin ./src"
   },
   "dependencies": {
+    "@api-typed/app": "0.1.0-alpha.18",
+    "@api-typed/command-line": "0.1.0-alpha.18",
+    "@api-typed/common": "0.1.0-alpha.18",
+    "@api-typed/config": "0.1.0-alpha.18",
+    "@api-typed/http-module": "0.1.0-alpha.18",
+    "@api-typed/logger": "0.1.0-alpha.18",
+    "@api-typed/standard-app": "0.1.0-alpha.18",
+    "@api-typed/testing": "0.1.0-alpha.18",
+    "@api-typed/typeorm-module": "0.1.0-alpha.18",
     "glob": "7.1.6",
     "nodemon": "^2.0.7",
     "reflect-metadata": "^0.1.13",
     "ts-node": "^9.1.1",
     "tsconfig-paths": "^3.9.0"
+  },
+  "peerDependencies": {
+    "class-validator": "^0.12.2",
+    "routing-controllers": "^0.9.0",
+    "typedi": "^0.8.0 || ^0.9.0 || ^0.10.0",
+    "typeorm": "^0.2.32"
   }
 }
