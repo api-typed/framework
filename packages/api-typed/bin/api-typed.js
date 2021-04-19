@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
-const { locateAppFile } = require('../src/locateAppFile');
-const { runApp } = require('../src/runApp');
+const { locateAppFile } = require('../src/run/locateAppFile');
+const { runApp } = require('../src/run/runApp');
 
 function main(command, runMode) {
   const isRun = command === 'run';
