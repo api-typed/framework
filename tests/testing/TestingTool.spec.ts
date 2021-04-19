@@ -1,7 +1,7 @@
 import { TestingTool } from '@api-typed/testing';
 import { Connection, Repository } from 'typeorm';
-import app from '../example/src/app.api-typed';
-import { Recipe } from '../example/src/entities/Recipe';
+import app from '../../example/src/app.api-typed';
+import { Recipe } from '../../example/src/entities/Recipe';
 
 describe('TestingTool', (): void => {
   const tt = new TestingTool(app);
