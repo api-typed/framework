@@ -32,7 +32,7 @@
     "clear": "lerna exec rimraf node_modules",
     "dev": "lerna run --stream --parallel dev",
     "lint": "lerna run lint",
-    "prerelease": "npm run build && npm run lint && npm run test",
+    "prerelease": "npm run build && npm run lint && npm run test && npm run test:e2e",
     "release": "lerna publish",
     "reset": "npm run clear && npm run bootstrap",
     "test:app": "API_TYPED_DEV_DIRS=packages api-typed run http-dev",
