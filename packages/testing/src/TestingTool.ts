@@ -1,4 +1,5 @@
 import { App } from '@api-typed/app';
+import { TypeORMModule } from '@api-typed/typeorm-module';
 import supertest from 'supertest';
 import { Connection, DeepPartial, EntityTarget, Repository } from 'typeorm';
 
@@ -55,8 +56,7 @@ export class TestingTool {
     }
 
     if (this.options.migrate) {
-      const connection = this.app.container.get(Connection);
-      await connection.runMigrations();
+      await this.getConnection().runMigrations();
 
       // seed ?
     }
@@ -70,15 +70,18 @@ export class TestingTool {
     }
 
     if (this.options.migrate) {
-      const connection = this.app.container.get(Connection);
-      await connection.dropDatabase();
+      await this.getConnection().dropDatabase();
     }
 
     await this.app.stop();
   }
 
+  public getConnection(): Connection {
+    return this.app.getModule<TypeORMModule>('typeorm').getConnection();
+  }
+
   public getRepository<T>(target: EntityTarget<T>): Repository<T> {
-    return this.app.container.get(Connection).getRepository(target);
+    return this.getConnection().getRepository(target);
   }
 
   public async createEntity<T>(

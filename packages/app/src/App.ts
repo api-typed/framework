@@ -224,13 +224,13 @@ export class App {
    *
    * @param name Module name.
    */
-  public getModule(name: string): ModuleInterface {
+  public getModule<T extends ModuleInterface>(name: string): T {
     const mod = this.modules.find((mod) => mod.name === name);
     if (!mod) {
       throw new Error(`Cannot find module "${name}"`);
     }
 
-    return mod;
+    return mod as T;
   }
 
   /**

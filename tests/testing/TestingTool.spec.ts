@@ -1,5 +1,5 @@
 import { TestingTool } from '@api-typed/testing';
-import { Connection, Repository } from 'typeorm';
+import { Repository } from 'typeorm';
 import app from '../../example/src/app.api-typed';
 import { Recipe } from '../../example/src/entities/Recipe';
 
@@ -8,7 +8,7 @@ describe('TestingTool', (): void => {
 
   describe('Automatically runs the app', (): void => {
     test('Automatically migrates the database', async (): Promise<void> => {
-      const pending = await tt.app.container.get(Connection).showMigrations();
+      const pending = await tt.getConnection().showMigrations();
       expect(pending).toBe(false);
     });
 

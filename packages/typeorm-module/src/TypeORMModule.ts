@@ -54,11 +54,14 @@ export class TypeORMModule extends AbstractModule implements HasCommands {
       migrations: this.migrations,
       subscribers: this.subscribers,
     });
-    app.container.set(Connection, this.connection);
   }
 
   public async close(): Promise<void> {
     await this.connection.close();
+  }
+
+  public getConnection(): Connection {
+    return this.connection;
   }
 
   public getEntities(): string[] {
