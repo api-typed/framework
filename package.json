@@ -49,6 +49,7 @@
     "@api-typed/config": "file:packages/config",
     "@api-typed/http-module": "file:packages/http-module",
     "@api-typed/logger": "file:packages/logger",
+    "@api-typed/message-queue": "file:packages/message-queue",
     "@api-typed/standard-app": "file:packages/standard-app",
     "@api-typed/testing": "file:packages/testing",
     "@api-typed/typeorm-module": "file:packages/typeorm-module",
