@@ -20,7 +20,7 @@ export class CommandRegistry {
 
   private commands: CommandDescription[] = [];
 
-  public addCommand(command: CommandDescription) {
+  public register(command: CommandDescription) {
     this.commands.push(command);
   }
 

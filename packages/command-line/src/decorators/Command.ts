@@ -6,7 +6,7 @@ export function Command(
   options?: Record<string, CommandOption | string>,
 ): ClassDecorator {
   return function (target) {
-    CommandRegistry.addCommand({
+    CommandRegistry.register({
       target,
       signature,
       description,

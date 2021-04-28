@@ -62,7 +62,7 @@ export class CommandLineModule extends AbstractModule implements AppDelegate {
     process.exit(exitCode);
   }
 
-  public addCommand(command: CommandDescription) {
-    this.registry.addCommand(command);
+  public registerCommand(command: CommandDescription) {
+    this.registry.register(command);
   }
 }
