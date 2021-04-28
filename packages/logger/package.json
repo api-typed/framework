@@ -24,6 +24,7 @@
     "lint": "eslint ./src"
   },
   "dependencies": {
+    "lodash.omit": "^4.5.0",
     "triple-beam": "1.3.0",
     "winston": "3.3.3"
   },
@@ -34,5 +35,8 @@
     "typedi": {
       "optional": true
     }
+  },
+  "devDependencies": {
+    "@types/lodash.omit": "^4.5.6"
   }
 }
