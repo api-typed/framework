@@ -238,9 +238,12 @@ export class App {
    *
    * @param checkMethods Method names that MUST be implemented on the module.
    */
-  public getTaggedModules<I>(checkMethods: string | string[]): I[] {
-    const requiredMethods =
-      typeof checkMethods === 'string' ? [checkMethods] : checkMethods;
+  public getTaggedModules<I>(checkMethod: keyof I): I[];
+  public getTaggedModules<I>(checkMethods: Array<keyof I>): I[];
+  public getTaggedModules<I>(checkMethods: keyof I | Array<keyof I>): I[] {
+    const requiredMethods = Array.isArray(checkMethods)
+      ? checkMethods
+      : [checkMethods];
 
     const hasInterface = (mod: any): mod is I => {
       return requiredMethods.every((method) => method in mod);
@@ -258,11 +261,12 @@ export class App {
    *
    * @param loaderMethod Name of the loader method that should be in the I interface.
    */
-  public loadFromModules<I, R = Function | string>(loaderMethod: string): R[] {
-    const providers: I[] = this.getTaggedModules<I>(loaderMethod);
+  public loadFromModules<I, R = Function | string>(loaderMethod: keyof I): R[] {
+    const providers = this.getTaggedModules<I>(loaderMethod);
 
     return providers.reduce((items, mod: I) => {
-      return [...items, ...mod[loaderMethod](this.config)];
+      const method = (mod[loaderMethod] as unknown) as Function;
+      return [...items, ...method(this.config)];
     }, []);
   }
 }
