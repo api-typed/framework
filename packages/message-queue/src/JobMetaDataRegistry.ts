@@ -1,8 +1,11 @@
 import { ClassName } from '@api-typed/common';
 import { JobsOptions } from 'bullmq';
 import omit from 'lodash.omit';
+import { JobInterface } from './JobInterface';
 
-export type GenerateJobIdFunction = (...args: unknown[]) => string;
+export type GenerateJobIdFunction<T extends JobInterface = any> = (
+  ...args: Parameters<T['run']>
+) => string;
 
 interface JobMetaData {
   target: ClassName;
