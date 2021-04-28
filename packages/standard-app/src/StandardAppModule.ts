@@ -7,11 +7,12 @@ import {
   loadControllers,
   loadMiddlewares,
 } from '@api-typed/http-module';
+import { HasJobs, loadJobs } from '@api-typed/message-queue';
 import { HasEntities } from '@api-typed/typeorm-module';
 
 export class StandardAppModule
   extends AbstractModule
-  implements HasMiddlewares, HasControllers, HasCommands, HasEntities {
+  implements HasMiddlewares, HasControllers, HasCommands, HasEntities, HasJobs {
   public readonly name = 'standard_app';
 
   public loadConfig(config: Config) {
@@ -21,6 +22,7 @@ export class StandardAppModule
         commands: '<rootDir>/commands/**/*{.ts,.js}',
         controllers: '<rootDir>/controllers/**/*{.ts,.js}',
         entities: '<rootDir>/entities/**/*{.ts,.js}',
+        jobs: '<rootDir>/jobs/**/*{.ts,.js}',
         middlewares: '<rootDir>/middlewares/**/*{.ts,.js}',
       },
     });
@@ -45,5 +47,10 @@ export class StandardAppModule
   public loadEntities(config: Config): string[] {
     const pattern = config.get<string>('standard_app.entities');
     return [pattern];
+  }
+
+  public loadJobs(config: Config) {
+    const pattern = config.get<string>('standard_app.jobs');
+    return loadJobs(pattern);
   }
 }
