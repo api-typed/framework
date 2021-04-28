@@ -24,7 +24,7 @@ function main(command, runMode) {
 
   if (isRunDev) {
     return require('nodemon')({
-      script: path.resolve(__dirname, '../src/runApp'),
+      script: path.resolve(__dirname, '../src/run/runApp'),
       exec: 'ts-node -r tsconfig-paths/register',
       env: {
         API_TYPED_APP_FILE: appFile,
