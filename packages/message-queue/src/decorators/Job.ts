@@ -1,6 +1,8 @@
 import { classNameToString } from '@api-typed/common';
 import { JobsOptions } from 'bullmq';
-import JobRegistry, { GenerateJobIdFunction } from '../JobRegistry';
+import JobMetaDataRegistry, {
+  GenerateJobIdFunction,
+} from '../JobMetaDataRegistry';
 
 interface JobOptions extends JobsOptions {
   name?: string;
@@ -42,7 +44,7 @@ function Job(
       };
     }
 
-    JobRegistry.register(
+    JobMetaDataRegistry.register(
       target as any,
       options.name || classNameToString(target as any),
       options.queue,

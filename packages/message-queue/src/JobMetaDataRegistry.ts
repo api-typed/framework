@@ -4,7 +4,7 @@ import omit from 'lodash.omit';
 
 export type GenerateJobIdFunction = (...args: unknown[]) => string;
 
-interface JobMetadata {
+interface JobMetaData {
   target: ClassName;
   name: string;
   queue: string;
@@ -12,10 +12,10 @@ interface JobMetadata {
   jobOptions?: JobsOptions;
 }
 
-export class JobRegistry {
-  public static readonly defaultInstance = new JobRegistry();
+export class JobMetaDataRegistry {
+  public static readonly defaultInstance = new JobMetaDataRegistry();
 
-  private jobs: JobMetadata[] = [];
+  private jobs: JobMetaData[] = [];
 
   public register(
     target: ClassName,
@@ -33,9 +33,9 @@ export class JobRegistry {
     });
   }
 
-  public getJobsMetadata(): JobMetadata[] {
+  public getJobsMetaData(): JobMetaData[] {
     return this.jobs;
   }
 }
 
-export default JobRegistry.defaultInstance;
+export default JobMetaDataRegistry.defaultInstance;
