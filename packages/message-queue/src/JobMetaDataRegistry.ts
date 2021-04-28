@@ -1,4 +1,4 @@
-import { ClassName } from '@api-typed/common';
+import { ClassName, classNameToString } from '@api-typed/common';
 import { JobsOptions } from 'bullmq';
 import omit from 'lodash.omit';
 import { JobInterface } from './JobInterface';
@@ -27,6 +27,7 @@ export class JobMetaDataRegistry {
     generateId?: GenerateJobIdFunction,
     options?: JobsOptions,
   ) {
+    // @todo check for name conflicts
     this.jobs.push({
       target,
       name,
@@ -36,7 +37,28 @@ export class JobMetaDataRegistry {
     });
   }
 
-  public getJobsMetaData(): JobMetaData[] {
+  public getJobMetaData(target: ClassName): JobMetaData;
+  public getJobMetaData(name: string): JobMetaData;
+  public getJobMetaData(targetOrName: ClassName | string): JobMetaData {
+    const predicate =
+      typeof targetOrName === 'string'
+        ? (job: JobMetaData) => job.name === targetOrName
+        : (job: JobMetaData) => job.target === targetOrName;
+
+    const job = this.jobs.find(predicate);
+
+    if (!job) {
+      const name =
+        typeof targetOrName === 'string'
+          ? targetOrName
+          : classNameToString(targetOrName);
+      throw new Error(`Could not find meta data for job "${name}"`);
+    }
+
+    return job;
+  }
+
+  public getAllMetaData(): JobMetaData[] {
     return this.jobs;
   }
 }
