@@ -12,7 +12,7 @@ export class MessageQueue {
   private readonly queues: Record<string, Queue> = {};
 
   constructor(
-    private readonly registry: JobMetaDataRegistry,
+    private readonly registry: JobMetaDataRegistry = JobMetaDataRegistry.defaultInstance,
     private readonly options: MessageQueueOptions = {},
     private readonly logger: LoggerInterface = new NullLogger(),
   ) {}
