@@ -1,6 +1,6 @@
+import { Timer } from '@api-typed/common';
 import { LoggerInterface, NullLogger } from '@api-typed/logger';
-import { Job, Worker } from 'bullmq';
-import { ConnectionOptions } from 'node:tls';
+import { ConnectionOptions, Job, Worker } from 'bullmq';
 import { JobInterface } from './JobInterface';
 import { JobMetaDataRegistry } from './JobMetaDataRegistry';
 
@@ -58,7 +58,6 @@ export class WorkerRunner {
       queue: queueName,
       job: job.name,
       jobId: job.id,
-      data: job.data,
       attempt: job.attemptsMade,
     };
 
@@ -71,6 +70,8 @@ export class WorkerRunner {
       logData,
     );
 
+    const timer = new Timer();
+
     try {
       const { target } = jobMetaData;
       const jobHandler = this.container
@@ -79,17 +80,23 @@ export class WorkerRunner {
 
       const result = await jobHandler.run(...job.data);
 
-      this.logger.debug(`${logPrefix} Completed`, {
+      const time = timer.stop('ms');
+      this.logger.debug(`${logPrefix} Completed in ${time} ms`, {
         ...logData,
+        data: job.data,
         result,
+        ms: time,
       });
 
       return result;
     } catch (e) {
-      this.logger.error(`${logPrefix} Failed`, {
+      const time = timer.stop('ms');
+      this.logger.error(`${logPrefix} Failed in ${time} ms`, {
         ...logData,
+        data: job.data,
         error: e?.message || e,
         trace: e?.stack?.split('\n'),
+        ms: time,
       });
       throw e;
     }
