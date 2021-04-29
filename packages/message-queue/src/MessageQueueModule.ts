@@ -2,6 +2,7 @@ import { AbstractModule, App, AppDelegate } from '@api-typed/app';
 import { HasJobs } from './HasJobs';
 import JobMetaDataRegistry from './JobMetaDataRegistry';
 import { MessageQueue } from './MessageQueue';
+import { WorkerRunner } from './WorkerRunner';
 
 export class MessageQueueModule extends AbstractModule implements AppDelegate {
   public readonly name = 'message_queue';
@@ -10,13 +11,19 @@ export class MessageQueueModule extends AbstractModule implements AppDelegate {
 
   private registry = JobMetaDataRegistry;
 
-  private messageQueue: MessageQueue;
+  private queue: MessageQueue;
+
+  private runner: WorkerRunner;
 
   public init(app: App): void | AppDelegate {
     this.app = app;
 
-    this.messageQueue = new MessageQueue(this.registry, {}, this.app.logger);
-    this.app.container.set(MessageQueue, this.messageQueue);
+    this.queue = new MessageQueue(this.registry, {}, this.app.logger);
+    this.app.container.set(MessageQueue, this.queue);
+
+    this.runner = new WorkerRunner(this.registry, {}, this.app.logger);
+    this.runner.useContainer(this.app.container);
+    this.app.container.set(WorkerRunner, this.runner);
 
     this.app.loadFromModules<HasJobs, Function>('loadJobs');
 
@@ -26,7 +33,7 @@ export class MessageQueueModule extends AbstractModule implements AppDelegate {
   }
 
   public async start(): Promise<void> {
-    // noop
+    this.runner.start();
   }
 
   public async stop(): Promise<void> {

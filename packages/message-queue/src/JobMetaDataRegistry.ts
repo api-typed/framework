@@ -1,6 +1,7 @@
 import { ClassName, classNameToString } from '@api-typed/common';
 import { JobsOptions } from 'bullmq';
 import omit from 'lodash.omit';
+import uniq from 'lodash.uniq';
 import { JobInterface } from './JobInterface';
 
 export type GenerateJobIdFunction<T extends JobInterface = any> = (
@@ -60,6 +61,11 @@ export class JobMetaDataRegistry {
 
   public getAllMetaData(): JobMetaData[] {
     return this.jobs;
+  }
+
+  public getQueueNames(): string[] {
+    const queueNames = this.getAllMetaData().map((job) => job.queue);
+    return uniq(queueNames);
   }
 }
 
