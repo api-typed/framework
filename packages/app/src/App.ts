@@ -16,7 +16,7 @@ import { ModuleInterface } from './Module/ModuleInterface';
  * in a specific run mode.
  */
 export interface AppDelegate {
-  start: () => Promise<unknown>;
+  start: (argv?: string[]) => Promise<unknown>;
   stop: (exitCode: number) => Promise<void>;
 }
 
@@ -150,7 +150,7 @@ export class App {
    *
    * Calls init() method on all registered modules in sequence.
    */
-  public async start(runMode: string): Promise<unknown> {
+  public async start(runMode: string, argv: string[] = []): Promise<unknown> {
     this.runMode = runMode;
 
     const delegates: {
@@ -188,7 +188,7 @@ export class App {
 
     this.logger.debug(`Running the app delegated to module "${moduleName}"`);
 
-    return this.delegate.start();
+    return this.delegate.start(argv);
   }
 
   /**

@@ -4,7 +4,7 @@ const path = require('path');
 const { locateAppFile } = require('../src/run/locateAppFile');
 const { runApp } = require('../src/run/runApp');
 
-function main(command, runMode) {
+function main(command, runMode, argv) {
   const isRun = command === 'run';
   if (isRun && !runMode) {
     throw new Error('Run mode expected, e.g.\n\n    $ api-typed run http');
@@ -29,6 +29,7 @@ function main(command, runMode) {
       env: {
         API_TYPED_APP_FILE: appFile,
         API_TYPED_RUN_MODE: runMode.replace(/-dev$/, ''),
+        API_TYPED_RUN_ARGV: argv.join(' '),
       },
       watch: devDirs.map((dir) => `${dir}/**`),
       ext: 'ts,json',
@@ -43,7 +44,7 @@ function main(command, runMode) {
   }
 
   if (isRun) {
-    return runApp(appFile, runMode);
+    return runApp(appFile, runMode, argv);
   }
 
   require('ts-node/register');
@@ -52,8 +53,8 @@ function main(command, runMode) {
 }
 
 try {
-  const [, , command, runMode] = process.argv;
-  main(command, runMode);
+  const [, , command, runMode, ...argv] = process.argv;
+  main(command, runMode, argv);
 } catch (e) {
   console.error('\n' + e.message + '\n');
   process.exit(1);
