@@ -33,6 +33,7 @@
     "@api-typed/config": "0.1.0-alpha.18",
     "@api-typed/http-module": "^0.1.0-beta.0",
     "@api-typed/logger": "0.1.0-alpha.18",
+    "@api-typed/message-queue": "0.1.0-beta.0",
     "@api-typed/standard-app": "^0.1.0-beta.0",
     "@api-typed/testing": "^0.1.0-beta.0",
     "@api-typed/typeorm-module": "^0.1.0-beta.0",
