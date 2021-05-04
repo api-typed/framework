@@ -23,8 +23,9 @@ export class WorkerRunner {
     private readonly logger: LoggerInterface = new NullLogger(),
   ) {}
 
-  public async start(): Promise<void> {
-    const queueNames = this.registry.getQueueNames();
+  public async start(onlyQueues: string[] = []): Promise<void> {
+    const queueNames =
+      onlyQueues.length > 0 ? onlyQueues : this.registry.getQueueNames();
 
     if (queueNames.length === 0) {
       throw new Error('Could not find any registered queues (or jobs)');

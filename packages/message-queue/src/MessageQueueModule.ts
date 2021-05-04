@@ -31,17 +31,15 @@ export class MessageQueueModule extends AbstractModule implements AppDelegate {
     }
   }
 
-  public async start(argv: string[] = []): Promise<void> {
-    // @todo accept argument for a single queue
+  public async start(onlyQueues = [], options = {}): Promise<void> {
+    const withScheduler = options['with-scheduler'] ?? false;
+
     if (this.app.getRunMode() === 'worker') {
-      await this.startRunner();
+      await this.startRunner(onlyQueues);
     }
 
-    if (
-      this.app.getRunMode() === 'scheduler' ||
-      argv.includes('--with-scheduler')
-    ) {
-      await this.startScheduler();
+    if (this.app.getRunMode() === 'scheduler' || withScheduler) {
+      await this.startScheduler(onlyQueues);
     }
   }
 
@@ -54,18 +52,18 @@ export class MessageQueueModule extends AbstractModule implements AppDelegate {
     }
   }
 
-  private async startRunner(): Promise<void> {
+  private async startRunner(onlyQueues: string[] = []): Promise<void> {
     this.runner = new WorkerRunner(this.registry, {}, this.app.logger);
     this.runner.useContainer(this.app.container);
     this.app.container.set(WorkerRunner, this.runner);
 
-    await this.runner.start();
+    await this.runner.start(onlyQueues);
   }
 
-  private async startScheduler(): Promise<void> {
+  private async startScheduler(onlyQueues: string[] = []): Promise<void> {
     this.scheduler = new SchedulerRunner(this.registry, {}, this.app.logger);
     this.app.container.set(SchedulerRunner, this.scheduler);
 
-    await this.scheduler.start();
+    await this.scheduler.start(onlyQueues);
   }
 }
