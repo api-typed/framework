@@ -18,6 +18,10 @@ export class SchedulerRunner {
   public async start(): Promise<void> {
     const queueNames = this.registry.getQueueNames();
 
+    if (queueNames.length === 0) {
+      throw new Error('Could not find any registered queues (or jobs)');
+    }
+
     this.logger.debug(`Starting scheduler for ${queueNames.length} queues`, {
       data: queueNames,
     });
