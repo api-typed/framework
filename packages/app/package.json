@@ -27,9 +27,13 @@
     "@api-typed/config": "^0.1.0-alpha.18",
     "@api-typed/logger": "^0.1.0-alpha.18",
     "dotenv": "8.2.0",
-    "find-package-json": "1.2.0"
+    "find-package-json": "1.2.0",
+    "minimist": "^1.2.5"
   },
   "peerDependencies": {
     "typedi": "^0.8.0 || ^0.9.0 || ^0.10.0"
+  },
+  "devDependencies": {
+    "@types/minimist": "^1.2.1"
   }
 }

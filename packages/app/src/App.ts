@@ -6,6 +6,7 @@ import {
   LogLevel,
 } from '@api-typed/logger';
 import findPackageJson from 'find-package-json';
+import minimist from 'minimist';
 import * as path from 'path';
 import Container from 'typedi';
 import { loadEnvFiles } from './lib/loadEnvFiles';
@@ -16,7 +17,7 @@ import { ModuleInterface } from './Module/ModuleInterface';
  * in a specific run mode.
  */
 export interface AppDelegate {
-  start: (argv?: string[]) => Promise<unknown>;
+  start: (args?: string[], options?: Record<string, any>) => Promise<unknown>;
   stop: (exitCode: number) => Promise<void>;
 }
 
@@ -188,7 +189,8 @@ export class App {
 
     this.logger.debug(`Running the app delegated to module "${moduleName}"`);
 
-    return this.delegate.start(argv);
+    const { _: args, ...opts } = minimist(argv);
+    return this.delegate.start(args, opts);
   }
 
   /**
