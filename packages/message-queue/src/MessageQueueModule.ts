@@ -31,13 +31,16 @@ export class MessageQueueModule extends AbstractModule implements AppDelegate {
     }
   }
 
-  public async start(): Promise<void> {
+  public async start(argv: string[] = []): Promise<void> {
     // @todo accept argument for a single queue
     if (this.app.getRunMode() === 'worker') {
       await this.startRunner();
     }
 
-    if (this.app.getRunMode() === 'scheduler') {
+    if (
+      this.app.getRunMode() === 'scheduler' ||
+      argv.includes('--with-scheduler')
+    ) {
       await this.startScheduler();
     }
   }

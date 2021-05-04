@@ -36,7 +36,7 @@
     "release": "lerna publish",
     "reset": "npm run clear && npm run bootstrap",
     "test:app": "API_TYPED_DEV_DIRS=packages api-typed run http-dev",
-    "test:app:worker": "API_TYPED_DEV_DIRS=packages api-typed run worker-dev",
+    "test:app:worker": "API_TYPED_DEV_DIRS=packages api-typed run worker-dev --with-scheduler",
     "test:db": "docker-compose up",
     "test:coverage": "jest --runInBand --coverage",
     "test:e2e:coverage": "jest --runInBand --config jest.e2e.config.ts --coverage",
