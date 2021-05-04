@@ -23,7 +23,7 @@ export class WorkerRunner {
     private readonly logger: LoggerInterface = new NullLogger(),
   ) {}
 
-  public start(): void {
+  public async start(): Promise<void> {
     const queueNames = this.registry.getQueueNames();
 
     this.logger.debug(`Starting worker for ${queueNames.length} queues`, {
@@ -31,6 +31,12 @@ export class WorkerRunner {
     });
 
     queueNames.forEach((queueName) => this.startForQueue(queueName));
+  }
+
+  public async stop(): Promise<void> {
+    await Promise.all(
+      Object.values(this.workers).map((worker) => worker.close()),
+    );
   }
 
   public useContainer(container: ContainerInterface) {

@@ -21,10 +21,6 @@ export class MessageQueueModule extends AbstractModule implements AppDelegate {
     this.queue = new MessageQueue(this.registry, {}, this.app.logger);
     this.app.container.set(MessageQueue, this.queue);
 
-    this.runner = new WorkerRunner(this.registry, {}, this.app.logger);
-    this.runner.useContainer(this.app.container);
-    this.app.container.set(WorkerRunner, this.runner);
-
     this.app.loadFromModules<HasJobs, Function>('loadJobs');
 
     if (app.getRunMode() === 'worker') {
@@ -33,10 +29,24 @@ export class MessageQueueModule extends AbstractModule implements AppDelegate {
   }
 
   public async start(): Promise<void> {
-    this.runner.start();
+    // @todo accept argument for a single queue
+    if (this.app.getRunMode() === 'worker') {
+      await this.startRunner();
+    }
+
   }
 
   public async stop(): Promise<void> {
-    // noop
+    if (this.runner) {
+      await this.runner.stop();
+    }
+  }
+
+  private async startRunner(): Promise<void> {
+    this.runner = new WorkerRunner(this.registry, {}, this.app.logger);
+    this.runner.useContainer(this.app.container);
+    this.app.container.set(WorkerRunner, this.runner);
+
+    await this.runner.start();
   }
 }
