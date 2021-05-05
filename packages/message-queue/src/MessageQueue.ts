@@ -1,6 +1,12 @@
 import { ClassName } from '@api-typed/common';
 import { LoggerInterface, NullLogger } from '@api-typed/logger';
-import { ConnectionOptions, Job, JobsOptions, Queue } from 'bullmq';
+import {
+  ConnectionOptions,
+  Job,
+  JobsOptions,
+  Queue,
+  RepeatOptions,
+} from 'bullmq';
 import { JobInterface } from './JobInterface';
 import { JobMetaDataRegistry } from './JobMetaDataRegistry';
 
@@ -90,6 +96,16 @@ export class MessageQueue {
     }
     return this.addJob(jobClassName, data, {
       delay,
+    });
+  }
+
+  public async repeat<T extends JobInterface>(
+    schedule: RepeatOptions,
+    jobClassName: ClassName<T>,
+    ...data: Parameters<T['run']>
+  ): Promise<Job<Parameters<T['run']>, ReturnType<T['run']>>> {
+    return this.addJob(jobClassName, data, {
+      repeat: schedule,
     });
   }
 }
