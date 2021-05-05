@@ -1,6 +1,8 @@
 import { Command, CommandInterface } from '@api-typed/command-line';
 import { InjectLogger } from '@api-typed/logger';
-import { Service } from 'typedi';
+import { MessageQueue } from '@api-typed/message-queue';
+import { Inject, Service } from 'typedi';
+import { GreetingJob } from '../jobs/GreetingJob';
 
 interface HelloOptions {
   shout?: boolean;
@@ -22,7 +24,10 @@ interface HelloOptions {
 })
 @Service()
 export class Hello implements CommandInterface {
-  constructor(@InjectLogger() private readonly logger) {}
+  constructor(
+    @InjectLogger() private readonly logger,
+    @Inject(() => MessageQueue) private readonly mq: MessageQueue,
+  ) {}
 
   public async run(
     name: string,
@@ -35,5 +40,14 @@ export class Hello implements CommandInterface {
       .filter(Boolean)
       .join(' ');
     this.logger.log(level, shout ? greeting.toUpperCase() : greeting);
+
+    await this.mq.dispatch(GreetingJob, name, question);
+    await this.mq.schedule(2000, GreetingJob, name, question);
+    await this.mq.schedule(
+      new Date(Date.now() + 10000),
+      GreetingJob,
+      name,
+      question,
+    );
   }
 }

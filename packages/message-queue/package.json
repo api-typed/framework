@@ -1,0 +1,42 @@
+{
+  "name": "@api-typed/message-queue",
+  "version": "0.1.0-beta.0",
+  "description": "Message Queue tools based on BullMQ, prepared for Api-Typed",
+  "author": {
+    "name": "Michal Palys-Dudek",
+    "email": "michal@pnd.io"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/api-typed/framework/tree/main/packages/message-queue#readme",
+  "bugs": "https://github.com/api-typed/framework/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/api-typed/framework.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "dist": "dist"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint ./src"
+  },
+  "dependencies": {
+    "@api-typed/app": "^0.1.0-beta.0",
+    "@api-typed/common": "^0.1.0-alpha.18",
+    "@api-typed/config": "^0.1.0-alpha.18",
+    "@api-typed/logger": "^0.1.0-alpha.18",
+    "bullmq": "^1.21.0",
+    "lodash.omit": "^4.5.0",
+    "lodash.uniq": "^4.5.0"
+  },
+  "peerDependencies": {
+    "typedi": "^0.8.0 || ^0.9.0 || ^0.10.0"
+  },
+  "devDependencies": {
+    "@types/lodash.omit": "^4.5.6",
+    "@types/lodash.uniq": "^4.5.6"
+  }
+}
