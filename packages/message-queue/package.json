@@ -1,6 +1,6 @@
 {
   "name": "@api-typed/message-queue",
-  "version": "0.1.0-beta.0",
+  "version": "0.1.0",
   "description": "Message Queue tools based on BullMQ, prepared for Api-Typed",
   "author": {
     "name": "Michal Palys-Dudek",
@@ -24,10 +24,10 @@
     "lint": "eslint ./src"
   },
   "dependencies": {
-    "@api-typed/app": "^0.1.0-beta.0",
-    "@api-typed/common": "^0.1.0-alpha.18",
+    "@api-typed/app": "^0.1.0",
+    "@api-typed/common": "^0.1.0",
     "@api-typed/config": "^0.1.0-alpha.18",
-    "@api-typed/logger": "^0.1.0-alpha.18",
+    "@api-typed/logger": "^0.1.0",
     "bullmq": "^1.21.0",
     "lodash.omit": "^4.5.0",
     "lodash.uniq": "^4.5.0"
