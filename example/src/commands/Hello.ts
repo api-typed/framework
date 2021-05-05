@@ -42,5 +42,12 @@ export class Hello implements CommandInterface {
     this.logger.log(level, shout ? greeting.toUpperCase() : greeting);
 
     await this.mq.dispatch(GreetingJob, name, question);
+    await this.mq.schedule(2000, GreetingJob, name, question);
+    await this.mq.schedule(
+      new Date(Date.now() + 10000),
+      GreetingJob,
+      name,
+      question,
+    );
   }
 }
