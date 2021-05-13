@@ -189,16 +189,44 @@ TBD.
 
 ## Banner
 
-TBD.
+If you want to print out anything before any command output, you can do so using the banner functionality:
+
+```ts
+CommandRunner.setBanner(/* any string */);
+```
 
 ## App Banner
 
-TBD.
+You can also output an "app banner" before any other output:
+
+```ts
+CommandRunner.setAppBanner(/* app name */, /* optional version */);
+```
+
+You can use both banner and app banner at the same time.
 
 ## Start callback
 
-TBD.
+You can execute a callback just before command execution starts using the `.onStart()` method:
+
+```ts
+CommandRunner.onStart((signature?: string): void => {
+  /* do something */
+});
+```
+
+The callback will receive a single argument with the `signature` of the executing command.
+
+The callback can be async.
 
 ## Custom exit handler
 
-TBD.
+You can execute a callback when the command finishes (either by returning or throwing an error) using the `.onExit()` method:
+
+```ts
+CommandRunner.onExit((exitCode: number, error?: unknown) => {
+  /* do something */
+});
+```
+
+The callback will receive an exit code as the 1st argument and an error (if thrown) as 2nd.
