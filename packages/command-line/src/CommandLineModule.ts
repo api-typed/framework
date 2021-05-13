@@ -7,7 +7,7 @@ import CommandRunner from './CommandRunner';
 import { HasCommands } from './HasCommands';
 
 /**
- * App module that is responsible for handling CLI configuration.
+ * Api-Typed module that is responsible for handling CLI configuration.
  */
 export class CommandLineModule extends AbstractModule implements AppDelegate {
   public readonly name = 'command';

@@ -5,7 +5,7 @@
 ![Lint](https://github.com/api-typed/framework/actions/workflows/lint.yml/badge.svg?branch=main)
 [![codecov](https://codecov.io/gh/api-typed/framework/branch/main/graph/badge.svg?token=XF35AW6T60)](https://codecov.io/gh/api-typed/framework)
 
-🔥 **Early Alpha / PoC** - do not try at home!
+🔥 **Early Beta / PoC** - do not try at home!
 
 Opinionated TypeScript framework built on the shoulders of giants.
 
@@ -25,9 +25,9 @@ TBD.
 
 # Components
 
-Api-Typed is composed of several components that are published as self-contained npm packages.
+Api-Typed is composed of several components that are published as self-contained npm packages that can be used stand-alone.
 
-- [@api-typed/common](https://github.com/api-typed/framework/tree/main/packages/common#readme) - shared utils that you probably don't need.
+- ⌨️ [@api-typed/command-line](https://github.com/api-typed/framework/tree/main/packages/command-line#readme) - helps in creating CLI commands in a structured way, leveraging the goods of TypeScript and making it easy to use powerful tools like Dependency Injection Containers.
 - [@api-typed/config](https://github.com/api-typed/framework/tree/main/packages/config#readme) - a simple configuration container.
 - [@api-typed/logger](https://github.com/api-typed/framework/tree/main/packages/logger#readme) - logger and logging tools.
 
