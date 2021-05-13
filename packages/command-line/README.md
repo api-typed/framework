@@ -185,8 +185,6 @@ Then your command class supports any methods of dependency injection that your c
 
 # Misc
 
-TBD.
-
 ## Banner
 
 If you want to print out anything before any command output, you can do so using the banner functionality:
