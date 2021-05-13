@@ -3,7 +3,7 @@ import get from 'lodash.get';
 import merge from 'lodash.merge';
 
 /**
- * Holds application configuration that can be loaded from files.
+ * Holds configuration that can be loaded from files.
  */
 export class Config {
   /**

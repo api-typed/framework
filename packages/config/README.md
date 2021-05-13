@@ -136,10 +136,13 @@ export class DatabaseService {
   constructor(
     @ConfigParam<string>('database.hostname')
     private readonly hostname: string,
+
     @ConfigParam<string>('database.username')
     private readonly username: string,
+
     @ConfigParam<string>('database.password')
     private readonly password: string,
+
     @ConfigParam<number>('database.port', { optional: true })
     private readonly host: number = 5432,
   ) {}

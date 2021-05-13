@@ -6,10 +6,16 @@ interface ConfigParamOptions {
   requiredKeys?: string[];
 }
 
+/**
+ * Inject value of the requested config parameter.
+ *
+ * @param key Name of the parameter.
+ * @param options Options.
+ */
 export function ConfigParam<T = unknown>(
   key: string,
   options: ConfigParamOptions = {},
-): ParameterDecorator {
+): ParameterDecorator | PropertyDecorator {
   const { optional = false, requiredKeys = [] } = options;
   return function (object: any, propertyName: string, index?) {
     Container.registerHandler({

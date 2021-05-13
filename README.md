@@ -28,7 +28,7 @@ TBD.
 Api-Typed is composed of several components that are published as self-contained npm packages that can be used stand-alone.
 
 - ⌨️ [@api-typed/command-line](https://github.com/api-typed/framework/tree/main/packages/command-line#readme) - helps in creating CLI commands in a structured way, leveraging the goods of TypeScript and making it easy to use powerful tools like Dependency Injection Containers.
-- [@api-typed/config](https://github.com/api-typed/framework/tree/main/packages/config#readme) - a simple configuration container.
+- ⚙️ [@api-typed/config](https://github.com/api-typed/framework/tree/main/packages/config#readme) - a simple configuration container with support for injecting params via `@ConfigParam()` decorator.
 - [@api-typed/logger](https://github.com/api-typed/framework/tree/main/packages/logger#readme) - logger and logging tools.
 
 # Documentation
