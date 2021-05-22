@@ -1,6 +1,6 @@
 {
   "name": "@api-typed/config",
-  "version": "0.1.0-alpha.18",
+  "version": "0.1.1",
   "description": "Simple configuration container.",
   "author": {
     "name": "Michal Palys-Dudek",
