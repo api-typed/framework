@@ -21,7 +21,10 @@ To get the best developer experience use it with [Api-Typed](https://github.com/
 ```ts
 import { App, CommandLineModule } from 'api-typed';
 
-export default new App(__dirname, [new CommandLineModule()]);
+export default new App(__dirname, [
+  // ... your other modules
+  new CommandLineModule(),
+]);
 ```
 
 It's already included for you out of the box when using [StandardApp](https://github.com/api-typed/framework/tree/main/packages/standard-app#readme).
