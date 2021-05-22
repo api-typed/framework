@@ -5,6 +5,9 @@ import { MessageQueue } from './MessageQueue';
 import { SchedulerRunner } from './SchedulerRunner';
 import { WorkerRunner } from './WorkerRunner';
 
+/**
+ * Api-Typed module that is responsible for handling the message queue and jobs.
+ */
 export class MessageQueueModule extends AbstractModule implements AppDelegate {
   public readonly name = 'message_queue';
 
