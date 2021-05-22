@@ -25,31 +25,23 @@ TBD.
 
 # Components
 
-Api-Typed is composed of several components that are published as self-contained npm packages that can be used stand-alone.
+Api-Typed is composed of several components that are published as separate npm packages that can be used stand-alone.
 
-### ⌨️ @api-typed/command-line
+### ⌨️ @api-typed/command-line - [View](https://github.com/api-typed/framework/tree/main/packages/command-line#readme)
 
 Helps in creating CLI commands in a structured way, leveraging the goods of TypeScript and making it easy to use powerful tools like Dependency Injection Containers.
 
-[Read more](https://github.com/api-typed/framework/tree/main/packages/command-line#readme)
-
-### ⚙️ @api-typed/config
+### ⚙️ @api-typed/config - [View](https://github.com/api-typed/framework/tree/main/packages/config#readme)
 
 A simple configuration container with support for injecting params via `@ConfigParam()` decorator.
 
-[Read more](https://github.com/api-typed/framework/tree/main/packages/config#readme)
-
-### 📯 @api-typed/message-queue
+### 📯 @api-typed/message-queue - [View](https://github.com/api-typed/framework/tree/main/packages/message-queue#readme)
 
 Wrapper around BullMQ that abstracts away queue implementation and allows to register jobs handlers with `@Job()` decorator.
 
-[Read more](https://github.com/api-typed/framework/tree/main/packages/message-queue#readme)
-
-### @api-typed/logger
+### @api-typed/logger - [View](https://github.com/api-typed/framework/tree/main/packages/logger#readme)
 
 Logger and logging tools.
-
-[Read more](https://github.com/api-typed/framework/tree/main/packages/logger#readme)
 
 # Documentation
 

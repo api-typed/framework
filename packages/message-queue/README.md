@@ -9,6 +9,45 @@ Wrapper around [BullMQ](https://docs.bullmq.io/) that abstracts away queue imple
 - Job configuration (target queue, retry strategy, generating id, etc.) lives in a single place.
 - Typed job payload that maps to the job handler's arguments 1:1.
 
+# At a glance
+
+Define a job and its handler:
+
+```ts
+@Job<GreetingJob>({
+  queue: 'high_priority',
+  generateId: (greetId, name) => `job_${greetId}_${name}`,
+})
+export class GreetingJob implements JobInterface {
+  public async run(
+    greetId: number,
+    name: string,
+    question?: string,
+  ): Promise<void> {
+    // implementation
+  }
+}
+```
+
+Add a job to its queue:
+
+```ts
+const messageQueue = new MessageQueue();
+
+messageQueue.dispatch(GreetingJob, 234, 'Michael', 'How are you?');
+```
+
+1. Create a class that implements `JobInterface`.
+2. Define job payload as the `.run()` method arguments.
+3. Decorate it with `@Job()`:
+   a. Bind it to a queue.
+   b. Optionally provide a function to generate job ID based on payload.
+4. Somewhere in your application bootstrap configure `MessageQueue` object.
+5. Easily dispatch jobs with typed arguments (payload) as if they were regular function calls.
+6. Run worker with `$ npx api-typed run worker --with-scheduler` if using `Api-Typed` framework.
+
+You can also use a dependency injection container!
+
 # Concepts
 
 While `@Api-Typed/Message-Queue` uses [BullMQ](https://docs.bullmq.io/) internally, it introduces several new concepts and changes how you interact with queues.

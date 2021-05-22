@@ -2,15 +2,39 @@
 
 > 🥣 An [Api-Typed](https://github.com/api-typed/framework) component.
 
-`Command-Line` helps in creating CLI commands in a structured way, leveraging
-the goods of TypeScript and making it easy to use powerful tools like Dependency
-Injection Containers.
+`Command-Line` helps in creating CLI commands in a structured way, leveraging the goods of TypeScript and making it easy to use powerful tools like Dependency Injection Containers.
 
 Using `@Command()` decorator to [register classes as command handlers](#decorator]) is the main and most powerful feature.
 
-It wraps around [Commander](https://www.npmjs.com/package/commander) abstracting
-away implementation and configuration details so that all you need to worry
-about is writing your well designed code.
+It wraps around [Commander](https://www.npmjs.com/package/commander) abstracting away implementation and configuration details so that all you need to worry about is writing your well designed code.
+
+# At a glance
+
+Define a command handler:
+
+```ts
+@Command('hello <name> [nickname]', {
+  shout: 's',
+})
+export class Hello implements CommandInterface {
+  public async run(
+    name: string,
+    nickname?: string,
+    options: { shout?: boolean } = {},
+  ) {
+    // ...
+  }
+}
+```
+
+1. Create a class that implements `CommandInterface`
+2. Decorate it with `@Command()`:
+   a. Use command signature to define it's name, `<arguments>` and `[optional_arguments]`
+   b. Define options in an object.
+3. Get all CLI arguments and options as parameters of `.run()` method.
+4. Run with `$ npx api-typed hello Michael` if using `Api-Typed` framwork.
+
+You can also use a dependency injection container!
 
 # Setup
 
