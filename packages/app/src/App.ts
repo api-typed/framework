@@ -17,7 +17,11 @@ import { ModuleInterface } from './Module/ModuleInterface';
  * in a specific run mode.
  */
 export interface AppDelegate {
-  start: (args?: string[], options?: Record<string, any>) => Promise<unknown>;
+  start: (
+    args?: string[],
+    options?: Record<string, any>,
+    argv?: string[],
+  ) => Promise<unknown>;
   stop: (exitCode: number) => Promise<void>;
 }
 
@@ -190,7 +194,7 @@ export class App {
     this.logger.debug(`Running the app delegated to module "${moduleName}"`);
 
     const { _: args, ...opts } = minimist(argv);
-    return this.delegate.start(args, opts);
+    return this.delegate.start(args, opts, argv);
   }
 
   /**

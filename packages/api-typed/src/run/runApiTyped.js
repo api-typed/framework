@@ -58,7 +58,11 @@ function runApiTyped(command, runMode, argv, appFile) {
 
   require('ts-node/register');
   require('tsconfig-paths/register');
-  runApp(appFile, 'command');
+  runApp(appFile, 'command', [null, null, ...argv]);
 }
 
-module.exports = { runApiTyped };
+function runApiTypedCommand(command, argv, appFile) {
+  runApiTyped('command', null, [command, ...argv], appFile);
+}
+
+module.exports = { runApiTyped, runApiTypedCommand };
