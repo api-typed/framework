@@ -37,9 +37,9 @@ import CommandRegistry, { CommandOption } from '../CommandRegistry';
  *    $ npx api-typed hello John -s -l notice
  *    ```
  */
-export function Command(
+export function Command<T = unknown>(
   signature: string,
-  options?: Record<string, CommandOption | string>,
+  options?: Record<keyof T, CommandOption | string>,
 ): ClassDecorator;
 /**
  * Register a class as a command to be run from a CLI.
@@ -79,16 +79,16 @@ export function Command(
  *    $ npx api-typed hello John -s -l notice
  *    ```
  */
-export function Command(
+export function Command<T = unknown>(
   signature: string,
   description?: string,
-  options?: Record<string, CommandOption | string>,
+  options?: Record<keyof T, CommandOption | string>,
 ): ClassDecorator;
 
-export function Command(
+export function Command<T = unknown>(
   signature: string,
-  descriptionOrOptions?: string | Record<string, CommandOption | string>,
-  optionsOrNothing?: Record<string, CommandOption | string>,
+  descriptionOrOptions?: string | Record<keyof T, CommandOption | string>,
+  optionsOrNothing?: Record<keyof T, CommandOption | string>,
 ) {
   const description =
     typeof descriptionOrOptions === 'string' ? descriptionOrOptions : '';

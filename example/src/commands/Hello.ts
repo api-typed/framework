@@ -9,7 +9,7 @@ interface HelloOptions {
   level?: 'notice' | 'error' | 'info';
 }
 
-@Command('hello <name> [question]', {
+@Command<HelloOptions>('hello <name> [question]', {
   shout: {
     short: 's',
     description: 'shout?',
