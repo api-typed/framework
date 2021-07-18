@@ -22,9 +22,11 @@ export class CommandLineModule extends AbstractModule implements AppDelegate {
     const verbose =
       process.argv.includes('-vvv') || process.argv.includes('--verbose');
     config.loadFromObject({
-      log_level: verbose
-        ? LogLevel.debug
-        : process.env.LOG_LEVEL_CLI || LogLevel.info,
+      log: {
+        level: verbose
+          ? LogLevel.debug
+          : process.env.LOG_LEVEL_CLI || LogLevel.info,
+      },
     });
   }
 
@@ -54,6 +56,8 @@ export class CommandLineModule extends AbstractModule implements AppDelegate {
     );
 
     this.app.loadFromModules<HasCommands, Function>('loadCommands');
+
+    console.log(__filename, this.app.modules, this.registry.getCommands());
 
     await this.runner.run(process.argv);
   }
