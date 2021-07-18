@@ -8,3 +8,4 @@ export * from '@api-typed/message-queue';
 export * from '@api-typed/standard-app';
 export * from '@api-typed/testing';
 export * from '@api-typed/typeorm-module';
+export * from './run/runApiTyped';
