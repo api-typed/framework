@@ -57,8 +57,6 @@ export class CommandLineModule extends AbstractModule implements AppDelegate {
 
     this.app.loadFromModules<HasCommands, Function>('loadCommands');
 
-    console.log(__filename, this.app.modules, this.registry.getCommands());
-
     await this.runner.run(process.argv);
   }
 
