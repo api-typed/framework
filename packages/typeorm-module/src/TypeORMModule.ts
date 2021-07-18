@@ -1,10 +1,7 @@
 import { AbstractModule, App } from '@api-typed/app';
-import { HasCommands } from '@api-typed/command-line';
+import { HasCommands, loadCommands } from '@api-typed/command-line';
 import { Config } from '@api-typed/config';
 import { Connection, createConnection, useContainer } from 'typeorm';
-import { Migrate } from './commands/Migrate';
-import { Migration } from './commands/Migration';
-import { Revert } from './commands/Revert';
 import { HasEntities } from './HasEntities';
 import { HasEntitySubscribers } from './HasEntitySubscribers';
 
@@ -24,7 +21,7 @@ export class TypeORMModule extends AbstractModule implements HasCommands {
   }
 
   public loadCommands() {
-    return [Migration, Migrate, Revert];
+    return loadCommands(`${__dirname}/commands/**/*{.ts,.js}`);
   }
 
   public async init(app: App): Promise<void> {
