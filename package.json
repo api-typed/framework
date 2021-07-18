@@ -24,7 +24,8 @@
     "framework"
   ],
   "bin": {
-    "api-typed": "packages/api-typed/bin/api-typed.js"
+    "api-typed": "packages/api-typed/bin/api-typed.js",
+    "create-api-typed": "packages/create-api-typed/bin/create-api-typed.js"
   },
   "scripts": {
     "bootstrap": "lerna exec rimraf node_modules && lerna bootstrap --hoist && lerna link --force-local",
@@ -37,6 +38,7 @@
     "reset": "npm run clear && npm run bootstrap",
     "test:app": "API_TYPED_DEV_DIRS=packages api-typed run http-dev",
     "test:app:worker": "API_TYPED_DEV_DIRS=packages api-typed run worker-dev --with-scheduler",
+    "test:create": "create-api-typed \"Test App\" --template=\"standard\"",
     "test:db": "docker-compose up",
     "test:coverage": "jest --runInBand --coverage",
     "test:e2e:coverage": "jest --runInBand --config jest.e2e.config.ts --coverage",
@@ -54,7 +56,8 @@
     "@api-typed/standard-app": "file:packages/standard-app",
     "@api-typed/testing": "file:packages/testing",
     "@api-typed/typeorm-module": "file:packages/typeorm-module",
-    "api-typed": "file:packages/api-typed"
+    "api-typed": "file:packages/api-typed",
+    "create-api-typed": "file:packages/create-api-typed"
   },
   "devDependencies": {
     "@types/express": "4.17.11",
