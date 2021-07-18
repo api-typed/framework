@@ -1,6 +1,6 @@
 {
   "name": "api-typed",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Api-Typed command line interface entry point.",
   "author": {
     "name": "Michal Palys-Dudek",
@@ -28,15 +28,15 @@
   },
   "dependencies": {
     "@api-typed/app": "^0.1.1",
-    "@api-typed/command-line": "^0.1.1",
+    "@api-typed/command-line": "^0.1.2",
     "@api-typed/common": "^0.1.0",
     "@api-typed/config": "^0.1.1",
     "@api-typed/http-module": "^0.1.1",
     "@api-typed/logger": "^0.1.0",
-    "@api-typed/message-queue": "^0.1.1",
-    "@api-typed/standard-app": "^0.1.1",
-    "@api-typed/testing": "^0.1.1",
-    "@api-typed/typeorm-module": "^0.1.1",
+    "@api-typed/message-queue": "^0.1.2",
+    "@api-typed/standard-app": "^0.1.2",
+    "@api-typed/testing": "^0.1.2",
+    "@api-typed/typeorm-module": "^0.1.2",
     "glob": "7.1.6",
     "nodemon": "^2.0.7",
     "reflect-metadata": "^0.1.13",

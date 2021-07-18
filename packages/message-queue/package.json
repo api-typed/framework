@@ -1,6 +1,6 @@
 {
   "name": "@api-typed/message-queue",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Message Queue tools based on BullMQ, prepared for Api-Typed",
   "author": {
     "name": "Michal Palys-Dudek",
