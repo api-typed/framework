@@ -1,5 +1,4 @@
-# test spec files
-Test App/
+.env.local
 
 # build files
 dist

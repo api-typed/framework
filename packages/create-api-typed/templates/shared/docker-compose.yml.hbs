@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:12-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: {{ packageName }}
+      PGDATA: /data/postgres
+    volumes:
+      - ./.data/postgres:/data/postgres
+    ports:
+      - 5432:5432
+
+  redis:
+    image: redis:alpine
+    ports:
+      - 6379:6379
