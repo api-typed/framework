@@ -1,6 +1,6 @@
 {
   "name": "create-api-typed",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Create Api-Typed app from a template.",
   "author": {
     "name": "Michal Palys-Dudek",
