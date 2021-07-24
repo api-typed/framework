@@ -24,7 +24,8 @@
     "create-api-typed": "bin/create-api-typed.js"
   },
   "directories": {
-    "dist": "dist"
+    "dist": "dist",
+    "templates": "templates"
   },
   "scripts": {
     "build": "rimraf dist && tsc",
