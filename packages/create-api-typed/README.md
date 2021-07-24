@@ -4,4 +4,10 @@
 
 Easily create Api-Typed project from a template.
 
-TBD.
+```
+$ npx create-api-typed "Your App"
+```
+
+It will create an Api-Typed project inside `./Your\ App`.
+
+That's it.
