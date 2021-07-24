@@ -1,0 +1,48 @@
+{
+  "name": "create-api-typed",
+  "version": "0.1.1",
+  "description": "Create Api-Typed app from a template.",
+  "author": {
+    "name": "Michal Palys-Dudek",
+    "email": "michal@pnd.io"
+  },
+  "license": "MIT",
+  "keywords": [
+    "app",
+    "api-typed",
+    "generator",
+    "template",
+    "skeleton"
+  ],
+  "homepage": "https://github.com/api-typed/framework/tree/main/packages/create-api-typed#readme",
+  "bugs": "https://github.com/api-typed/framework/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/api-typed/framework.git"
+  },
+  "bin": {
+    "create-api-typed": "bin/create-api-typed.js"
+  },
+  "directories": {
+    "dist": "dist"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint ./src"
+  },
+  "dependencies": {
+    "api-typed": "^0.1.1",
+    "glob": "^7.1.6",
+    "handlebars": "^4.7.7",
+    "lodash.snakecase": "^4.1.1",
+    "mkdirp": "^1.0.4",
+    "typedi": "^0.10.0"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.4",
+    "@types/handlebars": "^4.1.0",
+    "@types/lodash.snakecase": "^4.1.6",
+    "@types/mkdirp": "^1.0.2"
+  }
+}

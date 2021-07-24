@@ -61,3 +61,23 @@ export const deleteFile = async (filePath: string): Promise<void> => {
     });
   });
 };
+
+/**
+ * Is there a directory at the given path?
+ *
+ * @param dirPath
+ */
+export const isDir = (dirPath: string): boolean => {
+  let lstat;
+  try {
+    lstat = fs.lstatSync(dirPath);
+  } catch {
+    return false;
+  }
+
+  if (lstat?.isDirectory()) {
+    return true;
+  }
+
+  return false;
+};

@@ -38,7 +38,11 @@ export class CommandLineModule extends AbstractModule implements AppDelegate {
     }
   }
 
-  public async start(): Promise<void> {
+  public async start(
+    _args?: string[],
+    _options?: Record<string, any>,
+    argv?: string[],
+  ): Promise<void> {
     this.runner.useContainer(this.app.container);
     this.runner.setAppBanner(
       this.app.config.get('appName'),
@@ -57,7 +61,7 @@ export class CommandLineModule extends AbstractModule implements AppDelegate {
 
     this.app.loadFromModules<HasCommands, Function>('loadCommands');
 
-    await this.runner.run(process.argv);
+    await this.runner.run(argv?.length > 0 ? argv : process.argv);
   }
 
   public async stop(exitCode = 0): Promise<void> {

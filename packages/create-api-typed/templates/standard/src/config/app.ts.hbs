@@ -1,0 +1,8 @@
+import { LogLevel } from 'api-typed';
+
+export default {
+  appName: '{{ appName }}',
+  log: {
+    level: process.env.LOG_LEVEL || LogLevel.debug,
+  },
+};

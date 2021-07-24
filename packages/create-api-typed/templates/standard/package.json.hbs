@@ -1,0 +1,17 @@
+{
+  "name": "{{ packageName }}",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "tsc",
+    "dev": "api-typed run http-dev",
+    "dev:db": "docker-compose up",
+    "dev:worker": "api-typed run worker-dev --with-scheduler",
+    "start": "api-typed run http",
+    "start:worker": "api-typed run worker --with-scheduler",
+    "test": "NODE_ENV=test jest -i"
+  },
+  "private": true,
+  "license": "UNLICENSED",
+  "dependencies": {},
+  "devDependencies": {}
+}
